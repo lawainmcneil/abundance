@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abundance Financial Coaching | Investor Education & Resources</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #1B3A5C;
+      --primary-dark: #0F2640;
+      --primary-light: #2A5580;
+      --accent: #4DB383;
+      --accent-light: #5DBB8A;
+      --accent-bg: #E8F6F0;
+      --warm: #D4A843;
+      --warm-light: #FDF6E3;
+      --text: #1A2A3A;
+      --text-secondary: #4A5E72;
+      --text-light: #7A8EA0;
+      --bg: #FFFFFF;
+      --bg-light: #F5F7FA;
+      --bg-warm: #FAFBFC;
+      --border: #E2E8F0;
+      --border-light: #EDF2F7;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 12px 32px rgba(0,0,0,0.1);
+      --shadow-hover: 0 8px 24px rgba(27,58,92,0.12);
+      --radius: 12px;
+      --radius-lg: 16px;
+      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-width: 1080px;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== TOP BAR ===== */
+    .top-bar {
+      background: var(--primary-dark);
+      color: rgba(255,255,255,0.8);
+      font-size: 13px;
+      padding: 8px 0;
+    }
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-bar a {
+      color: rgba(255,255,255,0.8);
+      transition: color var(--transition);
+    }
+    .top-bar a:hover { color: #fff; }
+    .top-bar-right {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .top-bar-right svg { width: 14px; height: 14px; margin-right: 4px; vertical-align: middle; }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.95);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 72px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-svg {
+      height: 44px;
+      width: auto;
+    }
+    .logo-wordmark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .logo-wordmark-main {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0F2640;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .logo-wordmark-sub {
+      font-size: 9.5px;
+      font-weight: 500;
+      color: var(--text-light);
+      letter-spacing: 4.5px;
+      text-transform: uppercase;
+    }
+
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a {
+      padding: 8px 16px;
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      border-radius: 8px;
+      transition: all var(--transition);
+      position: relative;
+    }
+    nav a:hover {
+      color: var(--primary);
+      background: var(--bg-light);
+    }
+    nav a.active {
+      color: var(--primary);
+      background: rgba(27,58,92,0.06);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all var(--transition);
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      border: 1.5px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: rgba(27,58,92,0.03);
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: white;
+    }
+    .btn-accent:hover {
+      background: #259960;
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+      padding: 80px 0 90px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(46,155,110,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(212,168,67,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 24px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-light);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      max-width: 700px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .hero .btn-primary {
+      background: #fff;
+      color: var(--primary-dark);
+    }
+    .hero .btn-primary:hover {
+      background: #f0f4f8;
+      box-shadow: var(--shadow-lg);
+    }
+    .hero .btn-outline {
+      border-color: rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.9);
+    }
+    .hero .btn-outline:hover {
+      border-color: rgba(255,255,255,0.6);
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .hero-stat h3 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .hero-stat p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0;
+    }
+
+    /* ===== TOPIC FILTERS ===== */
+    .topic-nav {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border-light);
+      padding: 20px 0;
+      position: sticky;
+      top: 72px;
+      z-index: 90;
+    }
+    .topic-pills {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+    .topic-pills::-webkit-scrollbar { display: none; }
+    .topic-pill {
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      transition: all var(--transition);
+      background: var(--bg);
+    }
+    .topic-pill:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: rgba(27,58,92,0.04);
+    }
+    .topic-pill.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .section {
+      padding: 72px 0;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 36px;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+    .section-header p {
+      color: var(--text-light);
+      font-size: 16px;
+      margin-top: 8px;
+    }
+    .view-all {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap var(--transition);
+    }
+    .view-all:hover { gap: 8px; }
+    .view-all svg { width: 16px; height: 16px; }
+
+    /* ===== FEATURED ARTICLE ===== */
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 24px;
+    }
+    .featured-card {
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      transition: all var(--transition);
+    }
+    .featured-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+      border-color: transparent;
+    }
+    .featured-card-img {
+      height: 360px;
+      background: #000;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .featured-card-img video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .featured-card-img .img-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.1;
+      background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.3) 0%, transparent 50%),
+                         radial-gradient(circle at 80% 20%, rgba(255,255,255,0.2) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    .featured-card-img svg {
+      width: 80px;
+      height: 80px;
+      color: rgba(255,255,255,0.3);
+      position: relative;
+      z-index: 1;
+    }
+    .featured-card-body {
+      padding: 28px;
+    }
+    .card-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+    .tag-retirement { background: var(--accent-bg); color: var(--accent); }
+    .tag-investing { background: rgba(27,58,92,0.08); color: var(--primary); }
+    .tag-planning { background: var(--warm-light); color: #B08C30; }
+    .tag-tax { background: #FDF2F2; color: #C0392B; }
+    .tag-market { background: #F0E6FF; color: #7C3AED; }
+
+    .featured-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .featured-card p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .card-meta span { display: flex; align-items: center; gap: 4px; }
+    .card-meta svg { width: 14px; height: 14px; }
+
+    /* ===== SIDE STACK CARDS ===== */
+    .side-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .side-card {
+      display: flex;
+      gap: 18px;
+      padding: 20px;
+      background: var(--bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-light);
+      transition: all var(--transition);
+      align-items: flex-start;
+    }
+    .side-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-1px);
+      border-color: transparent;
+    }
+    .side-card-thumb {
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .side-card-thumb svg { width: 32px; height: 32px; opacity: 0.5; }
+    .side-card h4 {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .side-card p {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* ===== RESOURCE CARDS GRID ===== */
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .resource-card {
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      overflow: hidden;
+      transition: all var(--transition);
+    }
+    .resource-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+      border-color: transparent;
+    }
+    .resource-card-img {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .resource-card-img .img-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.12;
+      background-image: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.4) 0%, transparent 50%);
+    }
+    .resource-card-img svg { width: 56px; height: 56px; color: rgba(255,255,255,0.35); z-index: 1; position: relative; }
+    .resource-card-body {
+      padding: 24px;
+    }
+    .resource-card h3 {
+      font-size: 17px;
+      font-weight: 650;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+    .resource-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .read-more {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap var(--transition);
+    }
+    .read-more:hover { gap: 10px; }
+    .read-more svg { width: 16px; height: 16px; }
+
+    /* ===== QUICK TOOLS ===== */
+    .tools-section {
+      background: var(--bg-light);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .tool-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      border: 1px solid var(--border-light);
+      transition: all var(--transition);
+    }
+    .tool-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+      border-color: transparent;
+    }
+    .tool-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+    }
+    .tool-icon svg { width: 28px; height: 28px; }
+    .tool-card h4 {
+      font-size: 16px;
+      font-weight: 650;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .tool-card p {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* ===== NEWSLETTER ===== */
+    .newsletter {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      border-radius: var(--radius-lg);
+      padding: 56px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .newsletter::before {
+      content: '';
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(46,155,110,0.2), transparent 70%);
+      border-radius: 50%;
+    }
+    .newsletter-text { position: relative; z-index: 1; }
+    .newsletter h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .newsletter p {
+      color: rgba(255,255,255,0.7);
+      font-size: 15px;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+    .newsletter-form input {
+      padding: 14px 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 14px;
+      width: 280px;
+      outline: none;
+      font-family: inherit;
+      backdrop-filter: blur(4px);
+    }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.5); }
+    .newsletter-form input:focus { border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.15); }
+
+    /* ===== TOPICS SECTION ===== */
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .topic-card {
+      background: var(--bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      transition: all var(--transition);
+    }
+    .topic-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+      border-color: transparent;
+    }
+    .topic-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .topic-icon svg { width: 24px; height: 24px; }
+    .topic-card h4 {
+      font-size: 16px;
+      font-weight: 650;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .topic-card p {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+    .topic-count {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 64px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-top: 16px;
+      max-width: 280px;
+    }
+    .footer-col h5 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      padding: 6px 0;
+      transition: color var(--transition);
+    }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 28px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-bottom a {
+      color: rgba(255,255,255,0.35);
+      transition: color var(--transition);
+    }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.7); }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-logo .logo-svg {
+      height: 38px;
+    }
+    .footer-logo .logo-wordmark-main {
+      color: #fff;
+      font-size: 18px;
+    }
+    .footer-logo .logo-wordmark-sub {
+      color: rgba(255,255,255,0.45);
+      font-size: 8.5px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    /*
+     * Responsive breakpoints preserved for future production use.
+     * Currently disabled so the desktop layout always renders
+     * for client presentation purposes.
+     *
+     * To re-enable responsive behavior, uncomment the media queries below.
+     */
+
+    /*
+    @media (max-width: 1024px) {
+      .featured-grid { grid-template-columns: 1fr; }
+      .side-stack { flex-direction: row; overflow-x: auto; }
+      .side-card { min-width: 300px; }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar { display: none; }
+      .header-inner { height: 64px; }
+      nav { display: none; }
+      .hero { padding: 56px 0 64px; }
+      .hero-stats { gap: 24px; flex-wrap: wrap; }
+      .resource-grid { grid-template-columns: 1fr; }
+      .topic-grid { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: 1fr; }
+      .newsletter { flex-direction: column; padding: 40px 28px; text-align: center; }
+      .newsletter-form { flex-direction: column; width: 100%; }
+      .newsletter-form input { width: 100%; }
+      .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+    */
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .fade-in-delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .fade-in-delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .fade-in-delay-3 { animation-delay: 0.3s; opacity: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <span>SEC Registered Investment Advisor | CRD #175055</span>
+      <div class="top-bar-right">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          (800) 555-0100
+        </a>
+        <a href="#">Client Portal Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <svg class="logo-svg" viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Left/back peak (dark charcoal gray) -->
+          <path d="M26 2 L50 56 L2 56 Z" fill="#1B3A5C"/>
+          <!-- Right/front peak (green/teal) -->
+          <path d="M46 12 L70 56 L22 56 Z" fill="#4DB383"/>
+          <!-- Overlap intersection (blended dark green) -->
+          <path d="M36 32 L50 56 L22 56 Z" fill="#3A8A64"/>
+        </svg>
+        <div class="logo-wordmark">
+          <span class="logo-wordmark-main">Abundance</span>
+          <span class="logo-wordmark-sub">Financial Coaching</span>
+        </div>
+      </a>
+      <nav>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#" class="active">Resources</a>
+        <a href="#">Workshops</a>
+        <a href="#">Our Team</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-outline">Client Login</button>
+        <button class="btn btn-primary">Schedule a Call</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge fade-in">
+        <span class="dot"></span>
+        Investor Education Center
+      </div>
+      <h1 class="fade-in fade-in-delay-1">Invest with clarity.<br>Plan with confidence.</h1>
+      <p class="fade-in fade-in-delay-2">Explore expert guides, market insights, and planning tools designed to help you make informed financial decisions at every stage of life.</p>
+      <div class="hero-actions fade-in fade-in-delay-3">
+        <button class="btn btn-primary">Explore Resources</button>
+        <button class="btn btn-outline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Watch Our Workshop
+        </button>
+      </div>
+      <div class="hero-stats fade-in fade-in-delay-3">
+        <div class="hero-stat">
+          <h3>150+</h3>
+          <p>Educational Articles</p>
+        </div>
+        <div class="hero-stat">
+          <h3>20+</h3>
+          <p>Years of Experience</p>
+        </div>
+        <div class="hero-stat">
+          <h3>50+</h3>
+          <p>Workshops Annually</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPIC FILTER NAV -->
+  <div class="topic-nav">
+    <div class="container">
+      <div class="topic-pills">
+        <button class="topic-pill active">All Topics</button>
+        <button class="topic-pill">Retirement Planning</button>
+        <button class="topic-pill">Investing Basics</button>
+        <button class="topic-pill">Market Insights</button>
+        <button class="topic-pill">Tax Strategies</button>
+        <button class="topic-pill">Estate Planning</button>
+        <button class="topic-pill">Personal Finance</button>
+        <button class="topic-pill">Social Security</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURED ARTICLES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2>Featured Insights</h2>
+          <p>Our latest research and expert perspectives</p>
+        </div>
+        <a href="#" class="view-all">View All Articles <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="featured-grid">
+        <!-- Main Featured — with real video -->
+        <div class="featured-card">
+          <div class="featured-card-img">
+            <video controls playsinline preload="metadata" crossorigin="anonymous">
+              <source src="https://dl.dropboxusercontent.com/scl/fi/peywt57kv5b38t19unsvt/DuffyMarket.mp4?rlkey=28uay9yw3k5qx04gj9dlob5o2&st=o7a6h6dv" type="video/mp4">
+            </video>
+          </div>
+          <div class="featured-card-body">
+            <span class="card-tag tag-retirement">Market Update</span>
+            <h3>Duffy Market Update: What Every Investor Needs to Know in 2026</h3>
+            <p>Watch our latest market commentary covering current conditions, portfolio positioning, and actionable strategies for navigating today's environment.</p>
+            <div class="card-meta">
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                Video
+              </span>
+              <span>March 24, 2026</span>
+              <span>&middot; Abundance Team</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Side Stack -->
+        <div class="side-stack">
+          <a href="#" class="side-card">
+            <div class="side-card-thumb" style="background: linear-gradient(135deg, rgba(27,58,92,0.1), rgba(42,111,154,0.12))">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="var(--primary)" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+            </div>
+            <div>
+              <span class="card-tag tag-investing" style="font-size:11px; padding: 3px 10px; margin-bottom: 8px;">Investing</span>
+              <h4>Understanding Index Funds vs. Actively Managed Portfolios</h4>
+              <p>5 min read &middot; March 20, 2026</p>
+            </div>
+          </a>
+          <a href="#" class="side-card">
+            <div class="side-card-thumb" style="background: linear-gradient(135deg, rgba(46,155,110,0.1), rgba(59,194,133,0.12))">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" stroke-width="1.5"><path d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <span class="card-tag tag-tax" style="font-size:11px; padding: 3px 10px; margin-bottom: 8px;">Tax Strategy</span>
+              <h4>Roth Conversions in 2026: Is Now the Right Time?</h4>
+              <p>6 min read &middot; March 18, 2026</p>
+            </div>
+          </a>
+          <a href="#" class="side-card">
+            <div class="side-card-thumb" style="background: linear-gradient(135deg, rgba(212,168,67,0.12), rgba(212,168,67,0.18))">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="var(--warm)" stroke-width="1.5"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <span class="card-tag tag-planning" style="font-size:11px; padding: 3px 10px; margin-bottom: 8px;">Planning</span>
+              <h4>Social Security Timing: When to Claim for Maximum Benefit</h4>
+              <p>7 min read &middot; March 15, 2026</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCE CARDS -->
+  <section class="section" style="background: var(--bg-light); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2>Latest Resources</h2>
+          <p>Practical guides to help you make smarter financial decisions</p>
+        </div>
+        <a href="#" class="view-all">Load More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="resource-grid">
+        <a href="#" class="resource-card">
+          <div class="resource-card-img" style="background: linear-gradient(135deg, #1B4D6E, #2A6F9A)">
+            <div class="img-pattern"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <div class="resource-card-body">
+            <span class="card-tag tag-planning">Financial Planning</span>
+            <h3>The Complete Guide to Building an Emergency Fund in Uncertain Times</h3>
+            <p>Learn how much you really need set aside and the best places to keep it growing safely.</p>
+            <span class="read-more">Read Guide <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </a>
+        <a href="#" class="resource-card">
+          <div class="resource-card-img" style="background: linear-gradient(135deg, #2E9B6E, #3BC285)">
+            <div class="img-pattern"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <div class="resource-card-body">
+            <span class="card-tag tag-market">Market Update</span>
+            <h3>Q1 2026 Market Commentary: What Investors Should Know Now</h3>
+            <p>Our team breaks down the key trends, sector performance, and what to watch heading into Q2.</p>
+            <span class="read-more">Read Commentary <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </a>
+        <a href="#" class="resource-card">
+          <div class="resource-card-img" style="background: linear-gradient(135deg, #5B3E96, #7C5BB8)">
+            <div class="img-pattern"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          </div>
+          <div class="resource-card-body">
+            <span class="card-tag tag-retirement">Retirement</span>
+            <h3>Medicare Enrollment: A Step-by-Step Guide for New Retirees</h3>
+            <p>Avoid costly mistakes and late penalties with our comprehensive enrollment walkthrough.</p>
+            <span class="read-more">Read Guide <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK TOOLS -->
+  <section class="section tools-section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2>Planning Tools & Calculators</h2>
+          <p>Interactive tools to help you plan ahead</p>
+        </div>
+      </div>
+      <div class="tools-grid">
+        <a href="#" class="tool-card">
+          <div class="tool-icon" style="background: rgba(27,58,92,0.08);">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="var(--primary)" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8m-8 4h8m-8 4h5"/></svg>
+          </div>
+          <h4>Retirement Calculator</h4>
+          <p>Estimate how much you need to save based on your goals and timeline</p>
+        </a>
+        <a href="#" class="tool-card">
+          <div class="tool-icon" style="background: rgba(46,155,110,0.08);">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h4>Social Security Estimator</h4>
+          <p>Compare claiming strategies and see your projected monthly benefits</p>
+        </a>
+        <a href="#" class="tool-card">
+          <div class="tool-icon" style="background: rgba(212,168,67,0.1);">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="var(--warm)" stroke-width="1.8"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h4>Tax Bracket Planner</h4>
+          <p>Optimize your income strategy to minimize your effective tax rate</p>
+        </a>
+        <a href="#" class="tool-card">
+          <div class="tool-icon" style="background: rgba(124,58,237,0.08);">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#7C3AED" stroke-width="1.8"><path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          </div>
+          <h4>Risk Assessment Quiz</h4>
+          <p>Discover your investor profile and the right asset allocation for you</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BROWSE BY TOPIC -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2>Browse by Topic</h2>
+          <p>Deep-dive into the subjects that matter most to you</p>
+        </div>
+      </div>
+      <div class="topic-grid">
+        <a href="#" class="topic-card">
+          <div class="topic-icon" style="background: rgba(46,155,110,0.1);">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" stroke-width="1.8"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          </div>
+          <div>
+            <h4>Retirement Planning</h4>
+            <p>From 401(k) strategies to retirement income planning and Social Security optimization.</p>
+            <div class="topic-count">32 articles</div>
+          </div>
+        </a>
+        <a href="#" class="topic-card">
+          <div class="topic-icon" style="background: rgba(27,58,92,0.08);">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="var(--primary)" stroke-width="1.8"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          </div>
+          <div>
+            <h4>Investing Fundamentals</h4>
+            <p>Build your knowledge of stocks, bonds, ETFs, mutual funds, and asset allocation.</p>
+            <div class="topic-count">28 articles</div>
+          </div>
+        </a>
+        <a href="#" class="topic-card">
+          <div class="topic-icon" style="background: rgba(192,57,43,0.08);">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#C0392B" stroke-width="1.8"><path d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h4>Tax Strategies</h4>
+            <p>Tax-efficient investing, Roth conversions, charitable giving, and year-end planning tips.</p>
+            <div class="topic-count">24 articles</div>
+          </div>
+        </a>
+        <a href="#" class="topic-card">
+          <div class="topic-icon" style="background: rgba(212,168,67,0.1);">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="var(--warm)" stroke-width="1.8"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <div>
+            <h4>Estate Planning</h4>
+            <p>Wills, trusts, beneficiary designations, and legacy planning essentials.</p>
+            <div class="topic-count">18 articles</div>
+          </div>
+        </a>
+        <a href="#" class="topic-card">
+          <div class="topic-icon" style="background: rgba(124,58,237,0.08);">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#7C3AED" stroke-width="1.8"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <div>
+            <h4>Market Insights</h4>
+            <p>Quarterly commentary, economic analysis, and what it means for your portfolio.</p>
+            <div class="topic-count">41 articles</div>
+          </div>
+        </a>
+        <a href="#" class="topic-card">
+          <div class="topic-icon" style="background: rgba(46,155,110,0.1);">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="var(--accent)" stroke-width="1.8"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h4>Personal Finance</h4>
+            <p>Budgeting, debt management, insurance, and building a strong financial foundation.</p>
+            <div class="topic-count">22 articles</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER CTA -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="newsletter">
+        <div class="newsletter-text">
+          <h3>Stay Informed with Our Newsletter</h3>
+          <p>Get market updates, planning tips, and workshop invites delivered monthly.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="Enter your email address">
+          <button class="btn btn-accent" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg class="logo-svg" viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Footer version: lighter tones for dark background -->
+              <path d="M26 2 L50 56 L2 56 Z" fill="#4A6E8E"/>
+              <path d="M46 12 L70 56 L22 56 Z" fill="#7DD4AA"/>
+              <path d="M36 32 L50 56 L22 56 Z" fill="#6BB89A"/>
+            </svg>
+            <div class="logo-wordmark">
+              <span class="logo-wordmark-main">Abundance</span>
+              <span class="logo-wordmark-sub">Financial Coaching</span>
+            </div>
+          </div>
+          <p>Guiding investors through every stage of their financial journey with education, coaching, and personalized strategies.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Resources</h5>
+          <a href="#">Retirement Planning</a>
+          <a href="#">Investing Basics</a>
+          <a href="#">Tax Strategies</a>
+          <a href="#">Market Commentary</a>
+          <a href="#">Estate Planning</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="#">About Us</a>
+          <a href="#">Our Team</a>
+          <a href="#">Workshops</a>
+          <a href="#">Client Testimonials</a>
+          <a href="#">Careers</a>
+        </div>
+        <div class="footer-col">
+          <h5>Get Started</h5>
+          <a href="#">Schedule a Consultation</a>
+          <a href="#">Client Portal</a>
+          <a href="#">Newsletter Signup</a>
+          <a href="#">ADV Disclosures</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Abundance Financial Coaching, LLC. All rights reserved. SEC Registered Investment Advisor.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Disclosures</a>
+          <a href="#">ADV Part 2A</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Topic pill interactivity
+    document.querySelectorAll('.topic-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.topic-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+      });
+    });
+
+    // Subtle scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.resource-card, .tool-card, .topic-card, .side-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
